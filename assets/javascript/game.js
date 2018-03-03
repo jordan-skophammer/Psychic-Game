@@ -22,9 +22,14 @@ document.onkeyup = function(event) {
 		winCounter++;
 		document.getElementById('Wins').innerHTML = winCounter;
 		guessCounter = 9;
-		guessArray.length = 0;
+		guessArray.length = [];
 		if (!alert('WINNER!!!')){
-			window.location.reload();
+			document.getElementById('Outcome').innerHTML = '';
+			document.getElementById('Guesses').innerHTML = '';
+			winningLetter = String.fromCharCode(
+			    Math.floor(Math.random() * 26) + 97
+			);
+			console.log(winningLetter);
 		}
 	} else {
 		guessCounter--;
@@ -35,9 +40,14 @@ document.onkeyup = function(event) {
 		lossCounter++;
 		document.getElementById('Losses').innerHTML = lossCounter;
 		guessCounter = 9;
-		guessArray.length = 0;
+		guessArray.length = [];
 		if (!alert('LOSER!!!')){
-			window.location.reload();
+			document.getElementById('Outcome').innerHTML = '';
+			document.getElementById('Guesses').innerHTML = '';
+			winningLetter = String.fromCharCode(
+			    Math.floor(Math.random() * 26) + 97
+			);
+			console.log(winningLetter);
 		}
 	}
 }
