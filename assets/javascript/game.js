@@ -2,16 +2,16 @@ var winCounter = 0;
 var lossCounter = 0;
 var guessCounter = 9;
 
-var winningLetter = 'e';
+var winningLetter = String.fromCharCode(
+    Math.floor(Math.random() * 26) + 97
+  );
+
+console.log(winningLetter);
 
 var guessArray = [];
 
-
-
 document.onkeyup = function(event) {
 	
-	
-
 	var playerinput = String.fromCharCode(event.which).toLowerCase();
 
 	guessArray.push(playerinput);
@@ -24,6 +24,10 @@ document.onkeyup = function(event) {
 		guessCounter = 9;
 		guessArray.length = 0;
 		document.getElementById('Outcome').innerHTML = 'WINNER!';
+
+		function clearWinner() {
+			setTimeout(function(){document.getElementById('Outcome').innerHTML = '';}, 5000);
+		}
 
 	} else {
 		guessCounter--;
