@@ -23,12 +23,9 @@ document.onkeyup = function(event) {
 		document.getElementById('Wins').innerHTML = winCounter;
 		guessCounter = 9;
 		guessArray.length = 0;
-		document.getElementById('Outcome').innerHTML = 'WINNER!';
-
-		function clearWinner() {
-			setTimeout(function(){document.getElementById('Outcome').innerHTML = '';}, 5000);
+		if (!alert('WINNER!!!')){
+			window.location.reload();
 		}
-
 	} else {
 		guessCounter--;
 		document.getElementById('Left').innerHTML = guessCounter;
@@ -39,7 +36,9 @@ document.onkeyup = function(event) {
 		document.getElementById('Losses').innerHTML = lossCounter;
 		guessCounter = 9;
 		guessArray.length = 0;
-		document.getElementById('Outcome').innerHTML = 'LOSER!';
+		if (!alert('LOSER!!!')){
+			window.location.reload();
+		}
 	}
 }
 
